@@ -13,6 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBarScreen(title: 'House'));
+      appBar: const CustomAppBarScreen(
+        title: 'House',
+        action: [Icon(Icons.notification_add, size: 30)],
+      ),
+    );
   }
 }
