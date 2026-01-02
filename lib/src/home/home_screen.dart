@@ -17,6 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
         title: 'House',
         action: [Icon(Icons.notification_add, size: 30)],
       ),
+      body: Column(children: [
+        Text("House")
+      ],),
     );
   }
 }
