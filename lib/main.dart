@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_rent_app/src/home/home_screen.dart';
+import 'package:home_rent_app/test/for_test.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: HomeScreen(),
+          home:ForTest()// HomeScreen(),
         );
       },
     );
