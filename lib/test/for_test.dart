@@ -13,7 +13,16 @@ class _ForTestState extends State<ForTest> {
     return Scaffold(appBar: AppBar(title: Text("For Test")),
     body: Column(
         children: [
-          Text("jnhvgvgvgv")
+          Text("jnhvgvgvgv"),
+          Text("for testv"),
+          Text("jnhvgvgvgv"),
+          Row(
+            children: [
+              Text("for test"),
+              Text("for test"),
+              Text("for test"),
+            ],
+          )
 
       ],
     ),);
