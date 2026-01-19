@@ -22,7 +22,14 @@ class _ForTestState extends State<ForTest> {
               Text("for test"),
               Text("for test"),
             ],
-          )
+          ),
+          Row(
+            children: [
+              Text(" test"),
+              Text("test"),
+              Text(" test"),
+            ],
+          ),
 
       ],
     ),);
