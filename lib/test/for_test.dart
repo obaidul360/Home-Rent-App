@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
-
-
 class SimpleCalculator extends StatefulWidget {
   @override
   _SimpleCalculatorState createState() => _SimpleCalculatorState();
@@ -50,12 +48,17 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         margin: EdgeInsets.all(5),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(15),
             backgroundColor: btnColor,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
           onPressed: () => buttonPressed(btnText),
-          child: Text(btnText, style: TextStyle(fontSize: 25, color: Colors.white)),
+          child: Text(
+            btnText,
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
         ),
       ),
     );
@@ -63,31 +66,82 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Simple Calculator")),
-      body: Column(
-        children: <Widget>[
-          // ডিসপ্লে এরিয়া
-          Container(
-            alignment: Alignment.centerRight,
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            child: Text(equation, style: TextStyle(fontSize: 38)),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blueAccent[100],
+          centerTitle: true,
+          title: Text(
+            "Calculator",
+            style: TextStyle(
+              fontSize: 29,
+              fontWeight: FontWeight.bold,
+              color: Colors.deepPurple,
+            ),
           ),
-          Container(
-            alignment: Alignment.centerRight,
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-            child: Text(result, style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
-          ),
-          Expanded(child: Divider()),
-          // বাটন গ্রিড
-          Column(children: [
-            Row(children: [buildButton("C", Colors.redAccent), buildButton("⌫", Colors.blue), buildButton("÷", Colors.blue)]),
-            Row(children: [buildButton("7", Colors.grey), buildButton("8", Colors.grey), buildButton("9", Colors.grey), buildButton("×", Colors.blue)]),
-            Row(children: [buildButton("4", Colors.grey), buildButton("5", Colors.grey), buildButton("6", Colors.grey), buildButton(" - ", Colors.blue)]),
-            Row(children: [buildButton("1", Colors.grey), buildButton("2", Colors.grey), buildButton("3", Colors.grey), buildButton("+", Colors.blue)]),
-            Row(children: [buildButton(".", Colors.grey), buildButton("0", Colors.grey), buildButton("=", Colors.orangeAccent)]),
-          ])
-        ],
+        ),
+        body: Column(
+          children: <Widget>[
+            // ডিসপ্লে এরিয়া
+            Container(
+              alignment: Alignment.centerRight,
+              padding: EdgeInsets.fromLTRB(10, 15, 10, 2),
+              child: Text(equation, style: TextStyle(fontSize: 25)),
+            ),
+            Container(
+              alignment: Alignment.centerRight,
+              padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
+              child: Text(
+                result,
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Expanded(child: Divider(height: 5)),
+            // বাটন গ্রিড
+            Column(
+              children: [
+                Row(
+                  children: [
+                    buildButton("C", Colors.redAccent),
+                    buildButton("⌫", Colors.blue),
+                    buildButton("÷", Colors.blue),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton("7", Colors.grey),
+                    buildButton("8", Colors.grey),
+                    buildButton("9", Colors.grey),
+                    buildButton("×", Colors.blue),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton("4", Colors.grey),
+                    buildButton("5", Colors.grey),
+                    buildButton("6", Colors.grey),
+                    buildButton(" - ", Colors.blue),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton("1", Colors.grey),
+                    buildButton("2", Colors.grey),
+                    buildButton("3", Colors.grey),
+                    buildButton("+", Colors.blue),
+                  ],
+                ),
+                Row(
+                  children: [
+                    buildButton(".", Colors.grey),
+                    buildButton("0", Colors.grey),
+                    buildButton("=", Colors.orangeAccent),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
