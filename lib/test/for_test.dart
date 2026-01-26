@@ -69,7 +69,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blueAccent[100],
+          backgroundColor: Colors.blueAccent[200],
           centerTitle: true,
           title: Text(
             "Calculator",
