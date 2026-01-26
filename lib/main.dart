@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home:ForTest()// HomeScreen(),
+          home:SimpleCalculator()// HomeScreen(),
 
         );
       },
