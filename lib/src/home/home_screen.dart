@@ -26,6 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
         Text("Flat"),
         Text("Hottle"),
         Text("Sunrise"),
+        Text("Swiming poul"),
+        Text("Sunrise"),
+        Text("weather"),
+        Text("romantic"),
+        Text("Sunrise"),
       ],),
     );
   }
